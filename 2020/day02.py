@@ -18,11 +18,10 @@ def solve(lines,validate):
 
 
 if __name__ == "__main__":
-    filename = "day02.txt"
+    day = 2
     validators = [
         lambda s,a,b,c: s.count(c) in range(a,b+1),
         lambda s,a,b,c: (s[a-1] == c and s[b-1] != c) or (s[a-1] != c and s[b-1] == c)
     ]
-    test_input = ["1-3 a: abcde","1-3 b: cdefg","2-9 c: ccccccccc"]
     test_outputs = [2,1]
-    util.solve(filename,validators,test_input,test_outputs,solve)
+    util.solve(day,validators,test_outputs,solve)

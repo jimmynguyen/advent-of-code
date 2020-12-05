@@ -1,4 +1,4 @@
-# https://adventofcode.com/2020/day/2
+# https://adventofcode.com/2020/day/3
 from math import prod
 import util
 
@@ -18,8 +18,7 @@ def solve(lines,slopes):
 
 
 if __name__ == "__main__":
-    filename = "day03.txt"
+    day = 3
     slopes = [[(3,1)],[(1,1),(3,1),(5,1),(7,1),(1,2)]]
-    test_input = util.read_file("day03_test.txt")
     test_outputs = [7,336]
-    util.solve(filename,slopes,test_input,test_outputs,solve)
+    util.solve(day,slopes,test_outputs,solve)

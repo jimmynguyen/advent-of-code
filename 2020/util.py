@@ -1,16 +1,28 @@
-def read_file(filename):
+import os
+
+
+def read_file(filename,strip=True):
     with open(filename) as file:
-        return [x.strip() for x in file.readlines()]
+        return [x.strip() if strip else x for x in file.readlines()]
 
 
-def unit_tests(test_input,inputs,test_outputs,solve):
-    for i,test in enumerate([(test_input,x,y) for x,y in zip(inputs,test_outputs)]):
+def run_tests(test_filename,inputs,test_outputs,solve,read_file):
+    if os.path.isfile(test_filename):
+        tests = zip([read_file(test_filename)]*len(inputs),inputs,test_outputs)
+    else:
+        test_filename = test_filename.replace(".","{}.")
+        tests = zip([read_file(test_filename.format(i+1)) for i in range(len(inputs))],inputs,test_outputs)
+    for i,test in enumerate(tests):
         actual = solve(*test[:-1])
         expected = test[-1]
+        print(actual,expected)
         assert actual == expected,f"unit test {i+1} failed: expected={expected}, actual={actual}"
 
 
-def solve(filename,inputs,test_input,test_outputs,solve,read_file=read_file):
-    unit_tests(test_input,inputs,test_outputs,solve)
+def solve(day,inputs,test_outputs,solve,read_file=read_file):
+    day_padded = str(day).zfill(2)
+    filename = f"day{day_padded}.txt"
+    test_filename = f"day{day_padded}_test.txt"
+    run_tests(test_filename,inputs,test_outputs,solve,read_file)
     for i,x in enumerate(inputs):
         print(f"part {i+1} answer:",solve(read_file(filename),x))

@@ -5,7 +5,7 @@ import util
 
 
 def read_file(filename):
-    return list(map(lambda x: int(x.strip()),util.read_file(filename)))
+    return list(map(int,util.read_file(filename)))
 
 
 def solve(nums,n):
@@ -17,8 +17,7 @@ def solve(nums,n):
 
 
 if __name__ == "__main__":
-    filename = "day01.txt"
+    day = 1
     inputs = [2,3]
-    test_input = [1721,979,366,299,675,1456]
     test_outputs = [514579,241861950]
-    util.solve(filename,inputs,test_input,test_outputs,solve,read_file)
+    util.solve(day,inputs,test_outputs,solve,read_file)
