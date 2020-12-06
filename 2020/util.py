@@ -15,7 +15,6 @@ def run_tests(test_filename,inputs,test_outputs,solve,read_file):
     for i,test in enumerate(tests):
         actual = solve(*test[:-1])
         expected = test[-1]
-        print(actual,expected)
         assert actual == expected,f"unit test {i+1} failed: expected={expected}, actual={actual}"
 
 
