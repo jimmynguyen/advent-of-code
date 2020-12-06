@@ -12,13 +12,11 @@ def read_file(filename,delimiter="\n"):
 def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file):
     if isinstance(filename_or_inputs,list):
         primary_inputs = filename_or_inputs
-        
+    elif os.path.isfile(filename_or_inputs):
+        primary_inputs = [read_file(filename_or_inputs)]*len(secondary_inputs)
     else:
-        if os.path.isfile(filename_or_inputs):
-            primary_inputs = [read_file(filename_or_inputs)]*len(secondary_inputs)
-        else:
-            test_filename = filename_or_inputs.replace(".","{}.")
-            primary_inputs = [read_file(test_filename.format(i+1)) for i in range(len(secondary_inputs))]
+        test_filename = filename_or_inputs.replace(".","{}.")
+        primary_inputs = [read_file(test_filename.format(i+1)) for i in range(len(secondary_inputs))]
     if secondary_inputs is None:
         tests = zip(primary_inputs,outputs)
     else:
