@@ -1,9 +1,12 @@
 import os
 
 
-def read_file(filename,strip=True):
+def read_file(filename,delimiter="\n"):
     with open(filename) as file:
-        return [x.strip() if strip else x for x in file.readlines()]
+        lines = [x.strip() for x in file.readlines()]
+        if delimiter != "\n":
+            lines = "\n".join(lines).split(delimiter)
+        return lines
 
 
 def run_tests(test_filename,inputs,test_outputs,solve,read_file):

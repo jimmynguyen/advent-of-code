@@ -4,7 +4,7 @@ import util
 
 
 def read_file(filename):
-    return [x.replace("\n"," ") for x in "\n".join(util.read_file(filename)).split("\n\n")]
+    return [x.replace("\n"," ") for x in util.read_file(filename,"\n\n")]
 
 
 def validate(passport):
