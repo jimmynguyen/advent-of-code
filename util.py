@@ -31,6 +31,8 @@ def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test
     day_padded = str(day).zfill(2)
     filename = f"day{day_padded}.txt"
     test_filename = f"day{day_padded}_test.txt"
+    year = os.path.basename(os.getcwd())
+    print(f"\n{year} day {day_padded} challenge")
     run_tests(test_filename if test_inputs1 is None else test_inputs1,inputs if test_inputs2 is None else test_inputs2,test_outputs,solve,read_file)
     if inputs is None:
         if day_inputs is None:
