@@ -27,13 +27,17 @@ def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file):
         assert actual == expected,f"unit test {i+1} failed: expected={expected}, actual={actual}"
 
 
-def solve(day,inputs,test_outputs,solve,read_file=read_file,test_inputs1=None,test_inputs2=None):
+def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test_inputs1=None,test_inputs2=None):
     day_padded = str(day).zfill(2)
     filename = f"day{day_padded}.txt"
     test_filename = f"day{day_padded}_test.txt"
     run_tests(test_filename if test_inputs1 is None else test_inputs1,inputs if test_inputs2 is None else test_inputs2,test_outputs,solve,read_file)
     if inputs is None:
-        print(f"answer:",solve(read_file(filename)))
+        if day_inputs is None:
+            day_inputs = read_file(filename)
+        print(f"answer:",solve(day_inputs))
     else:
         for i,x in enumerate(inputs):
-            print(f"part {i+1} answer:",solve(read_file(filename),x))
+            if day_inputs is None:
+                day_inputs = read_file(filename)
+            print(f"part {i+1} answer:",solve(day_inputs,x))
