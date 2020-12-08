@@ -24,7 +24,7 @@ def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file):
     for i,test in enumerate(tests):
         actual = solve(*test[:-1])
         expected = test[-1]
-        assert actual == expected,f"unit test {i+1} failed: expected={expected}, actual={actual}"
+        assert actual == expected,f"unit test {i+1} failed: inputs={test[:-1]} expected={expected}, actual={actual}"
 
 
 def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test_inputs1=None,test_inputs2=None):
