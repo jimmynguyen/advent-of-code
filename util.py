@@ -10,6 +10,8 @@ def read_file(filename,delimiter="\n"):
 
 
 def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file):
+    if outputs is None or len(outputs) == 0:
+        return
     if isinstance(filename_or_inputs,list):
         primary_inputs = filename_or_inputs
     elif os.path.isfile(filename_or_inputs):
