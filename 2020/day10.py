@@ -35,6 +35,23 @@ def solve_2(nodes):
     return count
 
 
+def solve_2_cheat(adapters):
+    # https://github.com/sijmn/aoc2020/blob/master/python/day10.py
+    paths = [0] * len(adapters)
+    paths[0] = 1
+    for i, value in enumerate(adapters[:-1]):
+        try:
+            if adapters[i + 1] <= value + 3:
+                paths[i + 1] += paths[i]
+            if adapters[i + 2] <= value + 3:
+                paths[i + 2] += paths[i]
+            if adapters[i + 3] <= value + 3:
+                paths[i + 3] += paths[i]
+        except IndexError:
+            pass
+    return paths[-1]
+
+
 def solve(numbers,solver):
     numbers = sorted(list(map(int,numbers)))
     numbers = [0] + numbers + [max(numbers) + 3]
@@ -43,7 +60,7 @@ def solve(numbers,solver):
 
 if __name__ == "__main__":
     day = 10
-    inputs = [solve_1,solve_2]
-    test_inputs2 = [solve_1,solve_1,solve_2,solve_2]
+    inputs = [solve_1,solve_2_cheat]
+    test_inputs2 = [solve_1,solve_1,solve_2_cheat,solve_2_cheat]
     test_outputs = [35,220,8,19208]
     util.solve(day,inputs,test_outputs,solve,test_inputs2=test_inputs2)
