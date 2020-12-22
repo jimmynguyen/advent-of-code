@@ -9,7 +9,7 @@ def read_file(filename,delimiter="\n"):
         return lines
 
 
-def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file):
+def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file,verbose):
     if outputs is None or len(outputs) == 0:
         return
     if isinstance(filename_or_inputs,list):
@@ -27,15 +27,17 @@ def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file):
         actual = solve(*test[:-1])
         expected = test[-1]
         assert actual == expected,f"unit test {i+1} failed: inputs={test[:-1]} expected={expected}, actual={actual}"
+        if verbose:
+            print(f"unit test {i+1} passed: inputs={test[:-1]} expected={expected}, actual={actual}")
 
 
-def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test_inputs1=None,test_inputs2=None):
+def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test_inputs1=None,test_inputs2=None,verbose=False):
     day_padded = str(day).zfill(2)
     filename = f"day{day_padded}.txt"
     test_filename = f"day{day_padded}_test.txt"
     year = os.path.basename(os.getcwd())
     print(f"\n{year} day {day_padded} challenge")
-    run_tests(test_filename if test_inputs1 is None else test_inputs1,inputs if test_inputs2 is None else test_inputs2,test_outputs,solve,read_file)
+    run_tests(test_filename if test_inputs1 is None else test_inputs1,inputs if test_inputs2 is None else test_inputs2,test_outputs,solve,read_file,verbose=verbose)
     if inputs is None:
         if day_inputs is None:
             day_inputs = read_file(filename)
