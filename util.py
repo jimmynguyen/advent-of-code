@@ -31,13 +31,14 @@ def run_tests(filename_or_inputs,secondary_inputs,outputs,solve,read_file,verbos
             print(f"unit test {i+1} passed: inputs={test[:-1]} expected={expected}, actual={actual}")
 
 
-def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test_inputs1=None,test_inputs2=None,verbose=False):
+def solve(day,inputs,test_outputs,solve,read_file=read_file,day_inputs=None,test_inputs1=None,test_inputs2=None,verbose=False,skip_tests=False):
     day_padded = str(day).zfill(2)
     filename = f"day{day_padded}.txt"
     test_filename = f"day{day_padded}_test.txt"
     year = os.path.basename(os.getcwd())
     print(f"\n{year} day {day_padded} challenge")
-    run_tests(test_filename if test_inputs1 is None else test_inputs1,inputs if test_inputs2 is None else test_inputs2,test_outputs,solve,read_file,verbose=verbose)
+    if not skip_tests:
+        run_tests(test_filename if test_inputs1 is None else test_inputs1,inputs if test_inputs2 is None else test_inputs2,test_outputs,solve,read_file,verbose=verbose)
     if inputs is None:
         if day_inputs is None:
             day_inputs = read_file(filename)
