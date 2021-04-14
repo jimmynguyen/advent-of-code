@@ -35,7 +35,6 @@ class Day23(Challenge):
             pc += 1
         return regs["b"]
 
-
     @staticmethod
     def solve_part1(input):
         return Day23.solve(input,reg_a=0)

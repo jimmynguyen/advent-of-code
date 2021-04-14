@@ -52,7 +52,6 @@ class Day24(Challenge):
                 break
         return quantum_entanglement
 
-
     @staticmethod
     def solve_part1(input):
         return Day24.solve(input,num_grps=3)

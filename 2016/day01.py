@@ -59,7 +59,6 @@ class Day01(Challenge):
     def solve_part1(input):
         return Day01.solve(input)
 
-
     @staticmethod
     def solve_part2(input):
         return Day01.solve(input,part2=True)

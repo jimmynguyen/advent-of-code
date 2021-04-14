@@ -13,7 +13,6 @@ class Day06(Challenge):
                 d[i][x] += 1
         return "".join([sorted(x.items(),key=lambda x:(x[1] if part2 else -x[1],x[0]))[0][0] for x in d])
 
-
     @staticmethod
     def solve_part1(input):
         return Day06.solve(input)
