@@ -17,11 +17,12 @@ class Challenge:
                 lines = "\n".join(lines).split(delimiter)
             return lines if len(lines) > 1 else lines[0]
 
-    def solve_all(self):
+    def solve_all(self,input=None):
         classname = self.__class__.__name__.lower()
-        filename = f"{classname}.txt"
         year = os.path.basename(os.getcwd())
         print(f"\n{year} {classname} challenge")
-        day_input = self.read_file(filename)
-        print("part 1 answer:",self.solve_part1(day_input))
-        print("part 2 answer:",self.solve_part2(day_input))
+        if input is None:
+            filename = f"{classname}.txt"
+            input = self.read_file(filename)
+        print("part 1 answer:",self.solve_part1(input))
+        print("part 2 answer:",self.solve_part2(input))
