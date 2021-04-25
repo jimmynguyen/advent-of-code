@@ -21,8 +21,5 @@ class Challenge:
         classname = self.__class__.__name__.lower()
         year = os.path.basename(os.getcwd())
         print(f"\n{year} {classname} challenge")
-        if input is None:
-            filename = f"{classname}.txt"
-            input = self.read_file(filename)
-        print("part 1 answer:",self.solve_part1(input))
-        print("part 2 answer:",self.solve_part2(input))
+        print("part 1 answer:",self.solve_part1(self.read_file(f"{classname}.txt") if input is None else input))
+        print("part 2 answer:",self.solve_part2(self.read_file(f"{classname}.txt") if input is None else input))
