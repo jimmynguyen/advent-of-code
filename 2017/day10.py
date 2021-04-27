@@ -5,7 +5,7 @@ from math import prod
 
 class Day10(Challenge):
     @staticmethod
-    def run_knot_hash(lengths, idx=0, skip_size=0, num_elements=256, num_rounds=1):
+    def get_sparse_knot_hash(lengths, idx=0, skip_size=0, num_elements=256, num_rounds=1):
         lst = list(range(num_elements))
         for _ in range(num_rounds):
             for length in lengths:
@@ -23,15 +23,9 @@ class Day10(Challenge):
         return lst
 
     @staticmethod
-    def solve_part1(sequence, num_elements=256):
-        lengths = [int(x) for x in sequence.split(",")]
-        lst = Day10.run_knot_hash(lengths, num_elements=num_elements)
-        return prod(lst[:2])
-
-    @staticmethod
-    def solve_part2(sequence, num_rounds=64):
+    def knot_hash(sequence, num_rounds=64):
         lengths = [ord(x) for x in sequence] + [17, 31, 73, 47, 23]
-        sparse_hash = Day10.run_knot_hash(lengths, num_rounds=num_rounds)
+        sparse_hash = Day10.get_sparse_knot_hash(lengths, num_rounds=num_rounds)
         dense_hash = ""
         for i in range(0, len(sparse_hash), 16):
             y = sparse_hash[i]
@@ -39,6 +33,16 @@ class Day10(Challenge):
                 y ^= x
             dense_hash += hex(y)[2:] if len(hex(y)[2:]) == 2 else f"0{hex(y)[2:]}"
         return dense_hash
+
+    @staticmethod
+    def solve_part1(sequence, num_elements=256):
+        lengths = [int(x) for x in sequence.split(",")]
+        lst = Day10.get_sparse_knot_hash(lengths, num_elements=num_elements)
+        return prod(lst[:2])
+
+    @staticmethod
+    def solve_part2(sequence):
+        return Day10.knot_hash(sequence)
 
 
 if __name__ == "__main__":
