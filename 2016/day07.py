@@ -5,14 +5,14 @@ from challenge import Challenge
 class Day07(Challenge):
     @staticmethod
     def contains_ABBA(str):
-        for i in range(0,len(str)-3):
+        for i in range(len(str)-3):
             if str[i] == str[i+3] and str[i+1] == str[i+2] and str[i] != str[i+1]:
                 return True
         return False
 
     @staticmethod
     def get_ABAs(str):
-        return [str[i:i+3] for i in range(0,len(str)-2) if str[i] == str[i+2] and str[i] != str[i+1]]
+        return [str[i:i+3] for i in range(len(str)-2) if str[i] == str[i+2] and str[i] != str[i+1]]
 
     @staticmethod
     def solve_part1(ips):

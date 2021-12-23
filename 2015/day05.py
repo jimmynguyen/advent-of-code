@@ -10,7 +10,7 @@ class Day05(Challenge):
     @staticmethod
     def solve_part1(input):
         return Day05.solve(input,lambda child: sum([x in "aeiou" for x in child]) >= 3 \
-            and any([child[i] == child[i+1] for i in range(0,len(child)-1)]) \
+            and any([child[i] == child[i+1] for i in range(len(child)-1)]) \
             and not any([x in child for x in ["ab","cd","pq","xy"]]))
 
     @staticmethod

@@ -10,7 +10,7 @@ class Day07(Challenge):
     def compute_cost(target_position, position, history):
         key = (min(target_position, position), max(target_position, position))
         if key not in history:
-            history[key] = sum(1 + x for x in range(0, abs(target_position - position)))
+            history[key] = sum(1 + x for x in range(abs(target_position - position)))
         return history[key]
 
     @staticmethod
@@ -18,7 +18,7 @@ class Day07(Challenge):
         position_counts = {}
         for position in positions:
             position_counts[position] = position_counts.get(position, 0) + 1
-        return min(sum(compute_cost(target_position, position, history) * count for position, count in position_counts.items()) for target_position in range(0, max(positions) + 1))
+        return min(sum(compute_cost(target_position, position, history) * count for position, count in position_counts.items()) for target_position in range(max(positions) + 1))
 
     @staticmethod
     def solve_part1(input):

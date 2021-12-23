@@ -8,8 +8,8 @@ class Day01(Challenge):
 
     @staticmethod
     def solve(nums, increment):
-        comparison_nums = [sum(nums[i:i+increment]) for i in range(0, len(nums) + 1 - increment)]
-        return len([i for i in range(0, len(comparison_nums)-1) if comparison_nums[i+1] > comparison_nums[i]])
+        comparison_nums = [sum(nums[i:i+increment]) for i in range(len(nums) + 1 - increment)]
+        return len([i for i in range(len(comparison_nums)-1) if comparison_nums[i+1] > comparison_nums[i]])
 
     @staticmethod
     def solve_part1(input):

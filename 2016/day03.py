@@ -23,7 +23,7 @@ class Day03(Challenge):
     @staticmethod
     def solve_part2(input):
         input = Day03.get_triangles(input)
-        triangles = [(input[i][j],input[i+1][j],input[i+2][j]) for i in range(0,len(input),3) for j in range(0,3)]
+        triangles = [(input[i][j],input[i+1][j],input[i+2][j]) for i in range(0,len(input),3) for j in range(3)]
         return Day03.solve(triangles)
 
 

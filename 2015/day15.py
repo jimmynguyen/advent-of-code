@@ -13,7 +13,7 @@ class Day15(Challenge):
             properties = dict([(y,int(z)) for y,z in [tuple(x.split(" ")) for x in properties.split(", ")]])
             _ingredients[ingredient] = properties
         possible_amounts = []
-        for x in combinations_with_replacement(list(range(0,101)),len(ingredients)):
+        for x in combinations_with_replacement(list(range(101)),len(ingredients)):
             if sum(x) == 100:
                 possible_amounts.append(x)
         max_score = float("-inf")
