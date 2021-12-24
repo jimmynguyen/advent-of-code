@@ -14,3 +14,6 @@ class TestDay10(unittest.TestCase):
         self.assertEqual(Day10.solve_part2(input),8)
         input = Day10().read_file("tests/test_day10.4.txt")
         self.assertEqual(Day10.solve_part2(input),19208)
+
+if __name__ == "__main__":
+    unittest.main()

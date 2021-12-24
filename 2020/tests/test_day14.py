@@ -10,3 +10,6 @@ class TestDay14(unittest.TestCase):
     def test_part2(self):
         input = Day14().read_file("tests/test_day14.2.txt")
         self.assertEqual(Day14.solve_part2(input),208)
+
+if __name__ == "__main__":
+    unittest.main()

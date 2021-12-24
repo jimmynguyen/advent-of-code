@@ -8,3 +8,6 @@ class TestDay05(unittest.TestCase):
 
     def test_part2(self):
         self.assertEqual(Day05.solve_part2(Day05().read_file("tests/test_day05.2.txt")),2)
+
+if __name__ == "__main__":
+    unittest.main()

@@ -9,3 +9,6 @@ class TestDay11(unittest.TestCase):
         for input, output in zip(inputs,outputs):
             actual = Day11.solve_part1(input)
             self.assertEqual(actual, output, f"input={input}, expected={output}, actual={actual}")
+
+if __name__ == "__main__":
+    unittest.main()

@@ -14,3 +14,6 @@ class TestDay03(unittest.TestCase):
         outputs = [3,3,11]
         for input,output in zip(inputs,outputs):
             self.assertEqual(Day03.solve_part2(input),output)
+
+if __name__ == "__main__":
+    unittest.main()

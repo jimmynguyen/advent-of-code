@@ -11,3 +11,6 @@ class TestDay14(unittest.TestCase):
 
     def test_part2(self):
         self.assertEqual(Day14.solve(self.input,(Day14.compute_max_score_2,1000)),689)
+
+if __name__ == "__main__":
+    unittest.main()

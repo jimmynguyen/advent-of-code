@@ -12,3 +12,6 @@ class TestDay02(unittest.TestCase):
         input = ["ULL","RRDDD","LURDL","UUUUD"]
         output = "5DB3"
         self.assertEqual(Day02.solve_part2(input),output)
+
+if __name__ == "__main__":
+    unittest.main()

@@ -15,3 +15,6 @@ class TestDay15(unittest.TestCase):
         outputs = [175594,2578,3544142,261214,6895259,18,362]
         for input,output in zip(self.inputs,outputs):
             self.assertEqual(Day15.solve_part2(input),output)
+
+if __name__ == "__main__":
+    unittest.main()

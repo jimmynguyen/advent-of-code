@@ -15,3 +15,6 @@ class TestDay15(unittest.TestCase):
         output = 309
         actual = Day15.solve_part2(self.input)
         self.assertEqual(actual, output, f"input={self.input}, expected={output}, actual={actual}")
+
+if __name__ == "__main__":
+    unittest.main()

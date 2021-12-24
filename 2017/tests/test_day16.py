@@ -15,3 +15,6 @@ class TestDay16(unittest.TestCase):
         output = "ceadb"
         actual = Day16.solve_part2(self.input, num_programs=5, num_dances=2)
         self.assertEqual(actual, output, f"input={self.input}, expected={output}, actual={actual}")
+
+if __name__ == "__main__":
+    unittest.main()

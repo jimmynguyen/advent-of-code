@@ -8,3 +8,6 @@ class TestDay03(unittest.TestCase):
         outputs = [0,3,2,31]
         for input,output in zip(inputs,outputs):
             self.assertEqual(Day03.solve_part1(input),output)
+
+if __name__ == "__main__":
+    unittest.main()

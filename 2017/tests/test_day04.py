@@ -8,3 +8,6 @@ class TestDay04(unittest.TestCase):
 
     def test_part1(self):
         self.assertEqual(Day04.solve_part1(self.input),2)
+
+if __name__ == "__main__":
+    unittest.main()

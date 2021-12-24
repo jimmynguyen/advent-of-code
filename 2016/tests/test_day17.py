@@ -12,3 +12,6 @@ class TestDay17(unittest.TestCase):
         self.assertEqual(Day17.solve_part2("ihgpwlah"),370)
         self.assertEqual(Day17.solve_part2("kglvqrro"),492)
         self.assertEqual(Day17.solve_part2("ulqzkmiv"),830)
+
+if __name__ == "__main__":
+    unittest.main()

@@ -10,3 +10,6 @@ class TestDay19(unittest.TestCase):
         self.assertEqual(Day19.solve_part2(5),2)
         self.assertEqual(Day19.solve_part2(6),3)
         self.assertEqual(Day19.solve_part2(7),5)
+
+if __name__ == "__main__":
+    unittest.main()

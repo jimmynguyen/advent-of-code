@@ -12,3 +12,6 @@ class TestDay07(unittest.TestCase):
         self.assertEqual(Day07.solve_part2(input),126)
         input = Day07().read_file("tests/test_day07.3.txt")
         self.assertEqual(Day07.solve_part2(input),32)
+
+if __name__ == "__main__":
+    unittest.main()

@@ -11,3 +11,6 @@ class TestDay17(unittest.TestCase):
 
     def test_part2(self):
         self.assertEqual(Day17.solve_part2(self.input),848)
+
+if __name__ == "__main__":
+    unittest.main()

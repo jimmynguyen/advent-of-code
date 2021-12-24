@@ -12,3 +12,6 @@ class TestDay03(unittest.TestCase):
         input = ["101 301 501","102 302 502","103 303 503","201 401 601","202 402 602","203 403 603"]
         output = 6
         self.assertEqual(Day03.solve_part2(input),output)
+
+if __name__ == "__main__":
+    unittest.main()

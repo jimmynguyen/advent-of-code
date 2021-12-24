@@ -16,3 +16,6 @@ class TestDay09(unittest.TestCase):
         for i,(input,output) in enumerate(zip(inputs,outputs)):
             actual = Day09.solve_part2(input)
             self.assertEqual(actual,output,f"Failed part 2 test #{i+1}: input={input}, expected={output}, actual={actual}")
+
+if __name__ == "__main__":
+    unittest.main()
