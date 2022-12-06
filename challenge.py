@@ -14,7 +14,7 @@ class Challenge:
 
     def read_file(self, filename: str, delimiter: str="\n", strip: bool=True):
         with open(filename) as file:
-            lines = [x.strip() if strip else x[:-1] for x in file.readlines()]
+            lines = [x.strip() if strip else x.rstrip("\n") for x in file.readlines()]
             if delimiter != "\n":
                 lines = "\n".join(lines).split(delimiter)
             return lines if len(lines) > 1 else lines[0]
