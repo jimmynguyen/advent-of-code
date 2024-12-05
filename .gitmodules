@@ -1,0 +1,3 @@
+[submodule "solutions/inputs"]
+  path = solutions/inputs
+  url = git@github.com:jimmynguyen/advent-of-code-inputs.git
