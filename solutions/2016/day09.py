@@ -6,7 +6,7 @@ import re
 class Day09(Challenge):
     @staticmethod
     def get_sequence_length(sequence,recursive=False):
-        match = re.search("\(\d+x\d+\)",sequence)
+        match = re.search(r"\(\d+x\d+\)",sequence)
         if not match:
             return len(sequence)
         start,end = match.span()

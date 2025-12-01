@@ -15,7 +15,7 @@ class Day10(Challenge):
     def solve(instructions,chips=None):
         bots = dict()
         for ins in instructions:
-            if re.match("^value \d+ goes to bot \d+$",ins):
+            if re.match(r"^value \d+ goes to bot \d+$",ins):
                 val,id = tuple(map(lambda x:int(x) if x.isnumeric() else x,map(lambda x:x.strip("value "),ins.split(" goes to "))))
                 Day10.get_bot(bots,id).chips.add(val)
             else:
