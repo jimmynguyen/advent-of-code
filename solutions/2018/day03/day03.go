@@ -54,7 +54,7 @@ func part1(lines []string) {
 			}
 		}
 	}
-	fmt.Println("Part 1 result:", count)
+	fmt.Println("2018 day03 part 1 answer:", count)
 }
 
 func part2(lines []string) {
@@ -105,11 +105,11 @@ func part2(lines []string) {
 			}
 		}
 	}
-	fmt.Println("Part 2 result:", allClaimIds)
+	fmt.Println("2018 day03 part 2 answer:", allClaimIds[0])
 }
 
 func main() {
-	filename := "day03.txt"
+	filename := "../inputs/2018/day03.txt"
 	fileBytes, err := os.ReadFile(filename)
 	handleError("Failed to read file", err)
 	lines := strings.Split(string(fileBytes), "\n")

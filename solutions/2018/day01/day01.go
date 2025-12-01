@@ -28,7 +28,7 @@ func part1(lines []string) {
 			result -= num
 		}
 	}
-	fmt.Println("Part 1 result:", result)
+	fmt.Println("2018 day01 part 1 answer:", result)
 }
 
 func part2(lines []string) {
@@ -45,7 +45,7 @@ func part2(lines []string) {
 			}
 			_, ok := visited[result]
 			if ok {
-				fmt.Println("Part 2 result:", result)
+				fmt.Println("2018 day01 part 2 answer:", result)
 				return
 			}
 			visited[result] = true
@@ -54,7 +54,7 @@ func part2(lines []string) {
 }
 
 func main() {
-	filename := "day01.txt"
+	filename := "../inputs/2018/day01.txt"
 	fileBytes, err := os.ReadFile(filename)
 	handleError("Failed to read file", err)
 	lines := strings.Split(string(fileBytes), "\n")

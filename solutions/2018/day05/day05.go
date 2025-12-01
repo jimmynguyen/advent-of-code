@@ -49,7 +49,7 @@ func react(line string) int {
 func part1(lines []string) int {
 	line := lines[0]
 	result := react(line)
-	fmt.Println("Part 1 result:", result)
+	fmt.Println("2018 day05 part 1 answer:", result)
 	return result
 }
 
@@ -74,12 +74,12 @@ func part2(lines []string) int {
 	}
 	waitGroup.Wait()
 
-	fmt.Println("Part 2 result:", result)
+	fmt.Println("2018 day05 part 2 answer:", result)
 	return result
 }
 
 func main() {
-	lines := readFile("day05.txt")
+	lines := readFile("../inputs/2018/day05.txt")
 
 	waitGroup := &sync.WaitGroup{}
 	waitGroup.Add(1)

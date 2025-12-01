@@ -205,7 +205,7 @@ func part1(lines []string) int {
 		maxArea = max(maxArea, idArea)
 	}
 
-	fmt.Println("Part 1 result:", maxArea)
+	fmt.Println("2018 day06 part 1 answer:", maxArea)
 	return maxArea
 }
 
@@ -218,12 +218,12 @@ func part2(lines []string, totalDistanceThreshold int) int {
 
 	totalArea := areaWithinThreshold(xMax, yMax, coords, totalDistanceThreshold)
 
-	fmt.Println("Part 2 result:", totalArea)
+	fmt.Println("2018 day06 part 2 answer:", totalArea)
 	return totalArea
 }
 
 func main() {
-	lines := readFile("day06.txt")
+	lines := readFile("../inputs/2018/day06.txt")
 
 	waitGroup := &sync.WaitGroup{}
 	waitGroup.Add(1)

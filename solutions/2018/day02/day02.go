@@ -50,7 +50,7 @@ func part1(lines []string) {
 		}
 	}
 	result := count2 * count3
-	fmt.Println("Part 1 result:", result)
+	fmt.Println("2018 day02 part 1 answer:", result)
 }
 
 func part2(lines []string) {
@@ -64,7 +64,7 @@ func part2(lines []string) {
 		for key, _ := range linePossible {
 			_, ok := possible[key]
 			if ok {
-				fmt.Println("Part 2 result:", key)
+				fmt.Println("2018 day02 part 2 answer:", key)
 				return
 			}
 			possible[key] = true
@@ -73,7 +73,7 @@ func part2(lines []string) {
 }
 
 func main() {
-	filename := "day02.txt"
+	filename := "../inputs/2018/day02.txt"
 	fileBytes, err := os.ReadFile(filename)
 	handleError("Failed to read file", err)
 	lines := strings.Split(string(fileBytes), "\n")

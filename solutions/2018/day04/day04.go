@@ -68,7 +68,7 @@ func part1(lines []string) int {
 		}
 	}
 	result := maxGuard * maxMinute
-	fmt.Println("Part 1 result:", result)
+	fmt.Println("2018 day04 part 1 answer:", result)
 	return result
 }
 
@@ -110,12 +110,12 @@ func part2(lines []string) int {
 		}
 	}
 	result := maxGuard * maxMinute
-	fmt.Println("Part 2 result:", result)
+	fmt.Println("2018 day04 part 2 answer:", result)
 	return result
 }
 
 func main() {
-	lines := readFile("day04.txt")
+	lines := readFile("../inputs/2018/day04.txt")
 
 	part1(lines)
 	part2(lines)

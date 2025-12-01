@@ -23,5 +23,5 @@ class Challenge:
         classname = self.__class__.__name__.lower()
         year = os.path.basename(os.getcwd())
         filename = os.path.join(os.path.dirname(__file__), "inputs", year, f"{classname}.txt")
-        print(f"\n{year} {classname} part 1 answer:",self.solve_part1(self.read_file(filename) if input is None else input))
-        print(f"\n{year} {classname} part 2 answer:",self.solve_part2(self.read_file(filename) if input is None else input))
+        print(f"{year} {classname} part 1 answer:",self.solve_part1(self.read_file(filename) if input is None else input))
+        print(f"{year} {classname} part 2 answer:",self.solve_part2(self.read_file(filename) if input is None else input))

@@ -4,9 +4,20 @@ run_all(){
   for i in $(seq 1 31);
   do
     i=$(printf %02d $i)
+
     filename="day$i.py"
     if test -f "$filename"; then
       PYTHONPATH=../..: python "$filename" &
+    fi
+
+    filename="day$i/day$i.py"
+    if test -f "$filename"; then
+      PYTHONPATH=../..: python "$filename" &
+    fi
+
+    filename="day$i/day$i.go"
+    if test -f "$filename"; then
+      go run "$filename" &
     fi
   done
   cd ..
