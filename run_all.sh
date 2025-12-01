@@ -13,11 +13,14 @@ run_all(){
 }
 
 if test -f "run_all.sh"; then
+  # running from root directory
   for year in "solutions/20"*
   do
     run_all $year &
   done
   wait
 else
-  run_all
+  # running from solutions/{year} directory
+  run_all .
+  wait
 fi
