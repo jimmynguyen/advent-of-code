@@ -6,17 +6,18 @@ run_all(){
     i=$(printf %02d $i)
     filename="day$i.py"
     if test -f "$filename"; then
-      PYTHONPATH=..: python "$filename"
+      PYTHONPATH=../..: python "$filename" &
     fi
   done
   cd ..
 }
 
 if test -f "run_all.sh"; then
-  for year in "20"*
+  for year in "solutions/20"*
   do
-    run_all $year
+    run_all $year &
   done
+  wait
 else
   run_all
 fi
