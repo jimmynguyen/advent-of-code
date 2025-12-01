@@ -11,7 +11,7 @@ class Day25(Challenge):
         return row,col
 
     @staticmethod
-    def solve(pos,num_grps=3,verbose=True):
+    def solve(pos,num_grps=3,verbose=False):
         row,col = pos
         known_codes = np.array([
             [20151125, 18749137, 17289845, 30943339, 10071777, 33511524],

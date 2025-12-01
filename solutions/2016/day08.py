@@ -31,12 +31,12 @@ class Day08(Challenge):
         return screen.sum()
 
     @staticmethod
-    def solve_part2(instructions,letter_width=5):
+    def solve_part2(instructions,letter_width=5,verbose=False):
         screen = Day08.get_screen(instructions).astype(str)
         screen[screen == "True"] = "#"
         screen[screen == "False"] = "."
         np.set_printoptions(linewidth=225)
-        print(screen)
+        if verbose: print(screen)
 
 
 class Operations:
