@@ -1,5 +1,5 @@
 # https://adventofcode.com/2024/day/9
-from challenge import Challenge
+from solutions.challenge import Challenge
 
 
 ParsedChallengeInput = str

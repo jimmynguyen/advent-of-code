@@ -1,7 +1,6 @@
 # https://adventofcode.com/2023/day/9
-import math
-from typing import Dict, List, Tuple
-from challenge import Challenge
+from typing import List
+from solutions.challenge import Challenge
 
 
 ParsedChallengeInput = List[List[int]]

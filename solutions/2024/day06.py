@@ -1,6 +1,6 @@
 # https://adventofcode.com/2024/day/6
 from typing import List, Set, Tuple
-from challenge import Challenge
+from solutions.challenge import Challenge
 
 
 ParsedChallengeInput = Tuple[List[str], Tuple[int, int]]

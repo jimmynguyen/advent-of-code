@@ -1,7 +1,7 @@
 # https://adventofcode.com/2023/day/7
 from enum import Enum
 from typing import List, Tuple
-from challenge import Challenge
+from solutions.challenge import Challenge
 from collections import Counter
 from functools import cmp_to_key
 

@@ -1,6 +1,6 @@
 # https://adventofcode.com/2024/day/8
 from typing import Dict, List, Tuple
-from challenge import Challenge
+from solutions.challenge import Challenge
 from itertools import combinations
 
 

@@ -1,7 +1,7 @@
 # https://adventofcode.com/2023/day/5
 import sys
 from typing import List, Tuple
-from challenge import Challenge
+from solutions.challenge import Challenge
 
 
 class AlmanacMap:

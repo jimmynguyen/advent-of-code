@@ -1,6 +1,6 @@
 # https://adventofcode.com/2024/day/7
 from typing import List, Tuple
-from challenge import Challenge
+from solutions.challenge import Challenge
 from itertools import product
 
 

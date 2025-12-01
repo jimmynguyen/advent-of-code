@@ -1,6 +1,6 @@
 # https://adventofcode.com/2023/day/6
 from typing import List
-from challenge import Challenge
+from solutions.challenge import Challenge
 
 
 ParsedChallengeInput = List[str]

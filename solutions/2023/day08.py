@@ -1,7 +1,7 @@
 # https://adventofcode.com/2023/day/8
 import math
 from typing import Dict, Tuple
-from challenge import Challenge
+from solutions.challenge import Challenge
 
 
 ParsedChallengeInput = Tuple[str, Dict[str, Tuple[str, str]]]
