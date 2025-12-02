@@ -13,6 +13,9 @@ class Challenge:
         raise NotImplementedError()
 
     def read_file(self, filename: str, delimiter: str="\n", strip: bool=True):
+        if not os.path.exists(filename):
+            return None
+
         with open(filename) as file:
             lines = [x.strip() if strip else x.rstrip("\n") for x in file.readlines()]
             if delimiter != "\n":
